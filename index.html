@@ -473,6 +473,7 @@ h2 {
 // 1. HÌNH ẢNH & ICON
 const IMGDIR = 'img/';
 const USE_IMG = false;
+window._pre = new Image(); window._pre.src = 'image.jpg';
 const bg = (k, fb) => USE_IMG ? `url(${IMGDIR}${k}.jpg) center/cover no-repeat,${fb}` : fb;
 const P_ = p => `<svg viewBox="0 0 48 48" width="1em" height="1em" style="vertical-align:-.15em">${p}</svg>`;
 const IC = { bal: P_('<ellipse cx="24" cy="19" rx="12" ry="15" fill="#ff8fab"/><path d="M24 34l-3 4h6zM24 38q-5 5 0 9" stroke="#777" fill="#e0678a"/>'),
@@ -2123,7 +2124,7 @@ function showRoad() {
       const chk = async () => { const v = gi.value.trim().toLowerCase(); if (!v)
         return; if (await checkHash('who', v) || await checkHash('who', 'chim' + v) || await checkHash('who2', v)) {
         OKS();
-        m.querySelector('.mb').innerHTML = `<h3>Chính xác! 🎉</h3><div>${PG(150)}</div><p>Đó là chú cánh cụt!</p><button id="n">Vào phòng tiệc ▶</button>`;
+        m.querySelector('.mb').innerHTML = `<h3>Chính xác! 🎉</h3><div>${PG(150)}</div><p>Bạn là chim cánh cụt cute bé nhỏ!</p><button id="n">Vào phòng tiệc ▶</button>`;
         m.querySelector('#n').onclick = () => { m.remove(); doorOpen = 1; guardSay = 'À người quen, mời khách quý vào'; playTone(160, .5, 'sawtooth', .05, 90); };
       }
       else {
