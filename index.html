@@ -1228,6 +1228,7 @@ function bgPlay() {
 
 document.addEventListener('pointerdown', () => { if (window.bgm && window.bgm.paused && !isMuted)
   bgPlay(); }, true);
+['click', 'pointerup', 'touchend', 'keydown'].forEach(ev => document.addEventListener(ev, () => { if (window.bgm && window.bgm.paused && !isMuted) bgPlay(); }, true));
 function creditHTML() { return '<b>🎵 Nhạc nền</b><br>' + MUSIC.map((m, i) => 'Chặng ' + (i + 1) + ': “' + m.title + '” — ' + m.by).join('<br>'); }
 const CSS8 = document.createElement('style');
 CSS8.textContent = 'body.mdl>*:not(.md):not(script):not(style){pointer-events:none!important}body.mdl .md,body.mdl #ft,body.mdl #ft>*,body.mdl .pp,body.mdl .pp *{pointer-events:auto!important}body.mdl .md.tt{pointer-events:none!important}';
